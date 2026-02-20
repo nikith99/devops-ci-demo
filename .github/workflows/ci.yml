@@ -1,19 +1,17 @@
-</> YAML
-
 name: Docker CI
 
 on:
   push:
-   branches:
-      -main
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-	- name: Checkout repository
-	  uses: action/checkout@v4
-	- name: Build Docker image
-	  run: docker build -t flask-ci-demo .
- 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t flask-ci-demo .
